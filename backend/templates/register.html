@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card pop">
+  <h2>Register</h2>
+  {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+  <form method="POST" class="form">
+    <input name="username" placeholder="Username" required/>
+    <input name="password" type="password" placeholder="Password" required/>
+    <select name="role">
+      <option value="customer">Customer</option>
+      <option value="staff">Staff</option>
+    </select>
+    <button class="btn">Create Account</button>
+  </form>
+</div>
+{% endblock %}

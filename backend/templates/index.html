@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Book a Table</h1>
+    <form id="reservationForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="number" name="guests" placeholder="Number of Guests" required>
+        <button type="submit">Reserve</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+ -->
+
+ {% extends "base.html" %}
+{% block content %}
+<div class="filters card pop">
+  <h2>Find a Table</h2>
+  <div class="grid">
+    <input id="f-date" type="date"/>
+    <input id="f-time" type="time"/>
+    <input id="f-size" type="number" min="1" placeholder="Party size"/>
+    <select id="f-area">
+      <option value="">Any area</option>
+      <option>indoor</option><option>outdoor</option><option>private</option>
+    </select>
+    <input id="f-min" type="number" min="0" placeholder="Min ₹/person"/>
+    <input id="f-max" type="number" min="0" placeholder="Max ₹/person"/>
+    <input id="f-features" placeholder="Features: window, quiet"/>
+    <button class="btn" id="btn-search">Search</button>
+  </div>
+</div>
+
+<h2 class="section">Available Slots</h2>
+<div id="slots" class="cards"></div>
+
+{% if user %}
+<div class="card pop">
+  <h3>Leave a Review</h3>
+  <div class="grid">
+    <select id="rev-rating">
+      <option value="5">★★★★★</option>
+      <option value="4">★★★★☆</option>
+      <option value="3">★★★☆☆</option>
+      <option value="2">★★☆☆☆</option>
+      <option value="1">★☆☆☆☆</option>
+    </select>
+    <input id="rev-comment" placeholder="Your comments" />
+    <button class="btn" id="btn-review">Submit</button>
+  </div>
+</div>
+{% endif %}
+
+<h2 class="section">Recent Reviews</h2>
+<div id="reviews" class="reviews"></div>
+{% endblock %}
+
