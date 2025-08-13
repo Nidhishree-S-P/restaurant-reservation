@@ -163,5 +163,12 @@ print(generate_password_hash("yourpassword"))
 
 ## 📸 Screenshots
 
+<img width="1873" height="949" alt="Screenshot 2025-08-13 140816" src="https://github.com/user-attachments/assets/000a6a90-4be0-435f-9147-c1c86291ec56" />
+
+<img width="1859" height="893" alt="Screenshot 2025-08-13 140855" src="https://github.com/user-attachments/assets/8b8b9941-1a6a-4d16-9578-ca1cad1b9f97" />
+<img width="1846" height="943" alt="Screenshot 2025-08-13 140941" src="https://github.com/user-attachments/assets/bb606953-9382-4889-8296-c21c7a9a7c3a" />
+<img width="438" height="216" alt="Screenshot 2025-08-13 141030" src="https://github.com/user-attachments/assets/7938f5a1-4bb1-4e08-98e3-593b199c07fa" />
+
+
 
 
