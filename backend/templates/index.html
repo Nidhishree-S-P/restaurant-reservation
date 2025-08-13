@@ -19,46 +19,129 @@
 </html>
  -->
 
- {% extends "base.html" %}
+{% extends "base.html" %}
 {% block content %}
+
+<!-- Reservation Filters -->
 <div class="filters card pop">
-  <h2>Find a Table</h2>
-  <div class="grid">
-    <input id="f-date" type="date"/>
-    <input id="f-time" type="time"/>
-    <input id="f-size" type="number" min="1" placeholder="Party size"/>
-    <select id="f-area">
-      <option value="">Any area</option>
-      <option>indoor</option><option>outdoor</option><option>private</option>
-    </select>
-    <input id="f-min" type="number" min="0" placeholder="Min ₹/person"/>
-    <input id="f-max" type="number" min="0" placeholder="Max ₹/person"/>
-    <input id="f-features" placeholder="Features: window, quiet"/>
-    <button class="btn" id="btn-search">Search</button>
+  <h2 class="card-title">🍽️ Find a Table</h2>
+  <div class="form grid-2">
+
+    <div class="form-group">
+      <label for="f-date">Date</label>
+      <input id="f-date" type="date"/>
+    </div>
+
+    <div class="form-group">
+      <label for="f-time">Time</label>
+      <input id="f-time" type="time"/>
+    </div>
+
+    <div class="form-group">
+      <label for="f-size">Party Size</label>
+      <input id="f-size" type="number" min="1" placeholder="e.g. 4"/>
+    </div>
+
+    <div class="form-group">
+      <label for="f-area">Seating Area</label>
+      <select id="f-area">
+        <option value="">Any area</option>
+        <option>Indoor</option>
+        <option>Outdoor</option>
+        <option>Private</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="f-min">Min Budget (₹/person)</label>
+      <input id="f-min" type="number" min="0" placeholder="e.g. 300"/>
+    </div>
+
+    <div class="form-group">
+      <label for="f-max">Max Budget (₹/person)</label>
+      <input id="f-max" type="number" min="0" placeholder="e.g. 1000"/>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="f-features">Features</label>
+      <input id="f-features" placeholder="e.g. window, quiet"/>
+    </div>
+
+    <!-- <div class="form-group full-width" style="text-align: right;">
+      <button class="btn" id="btn-search">🔍 Search</button>
+    </div> -->
+    <div class="form-group btn-wrapper">
+      <button class="btn full-btn" id="btn-search">🔍 Search</button>
+    </div>
   </div>
 </div>
 
-<h2 class="section">Available Slots</h2>
+<!-- Available Slots -->
+<h2 class="section">✨ Available Slots</h2>
 <div id="slots" class="cards"></div>
 
-{% if user %}
+<!-- Review Form -->
+<!-- {% if user %}
 <div class="card pop">
-  <h3>Leave a Review</h3>
-  <div class="grid">
-    <select id="rev-rating">
-      <option value="5">★★★★★</option>
-      <option value="4">★★★★☆</option>
-      <option value="3">★★★☆☆</option>
-      <option value="2">★★☆☆☆</option>
-      <option value="1">★☆☆☆☆</option>
-    </select>
-    <input id="rev-comment" placeholder="Your comments" />
-    <button class="btn" id="btn-review">Submit</button>
+  <h3 class="card-title">📝 Leave a Review</h3>
+  <div class="form grid-2">
+
+    <div class="form-group">
+      <label for="rev-rating">Rating</label>
+      <select id="rev-rating">
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+    </div>
+
+    <div class="form-group full-width">
+      <label for="rev-comment">Comment</label>
+      <input id="rev-comment" placeholder="Your comments"/>
+    </div>
+
+    <div class="form-group full-width" style="text-align: right;">
+      <button class="btn" id="btn-review">Submit</button>
+    </div>
   </div>
 </div>
+{% endif %} -->
+
+{% if user %}
+<section class="section">
+  <div class="card pop">
+    <h3 class="card-title">📝Leave a Review</h3>
+    <div class="form grid-2">
+
+      <div class="form-group">
+        <label for="rev-rating">Rating</label>
+        <select id="rev-rating">
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="rev-comment">Comment</label>
+        <input id="rev-comment" placeholder="Your comments"/>
+      </div>
+
+      <div class="form-group full-width" style="text-align: right;">
+        <button class="btn" id="btn-review">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</section>
 {% endif %}
 
-<h2 class="section">Recent Reviews</h2>
+<!-- Reviews -->
+<h2 class="section">💬 Recent Reviews</h2>
 <div id="reviews" class="reviews"></div>
-{% endblock %}
 
+{% endblock %}
